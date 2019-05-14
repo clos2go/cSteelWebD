@@ -100,6 +100,7 @@ label {
 
 #special::first-letter{
     color: green;
+    font-size: 100px;
 }
 
 /*Make the <h1> element's color change to blue when hovered over */
