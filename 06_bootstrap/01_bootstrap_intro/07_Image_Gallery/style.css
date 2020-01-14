@@ -1,4 +1,6 @@
-
+/* body {
+    padding-top: 70px;
+} */
 
 .jumbotron {
     margin-top: 70px;
@@ -8,4 +10,20 @@
 .bg-custom {
     background-color: #2c3e50;
     color: #ecf0f1;
+}
+
+.navbar-inverse {
+    background: #2c3e50
+}
+
+.navbar-dark .navbar-nav .nav-link   {
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link  {
+    color: white;
+}
+
+.fa-camera-retro ::after, ::before {
+    padding-right: .2em;
 }
