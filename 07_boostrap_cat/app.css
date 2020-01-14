@@ -1,0 +1,9 @@
+body {
+    background: url("cat.jpg");
+    background-size: cover;
+    background-position: center;
+}
+#content {
+    text-align: center;
+    padding: 25%;
+}
