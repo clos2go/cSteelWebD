@@ -20,10 +20,6 @@
     color: white;
 }
 
-.navbar-dark .navbar-nav .nav-link  {
-    color: white;
-}
-
 .fa-camera-retro ::after, ::before {
     padding-right: .2em;
 }
