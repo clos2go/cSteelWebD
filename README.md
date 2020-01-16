@@ -6,13 +6,13 @@
 Functions let us wrap bits of code up into RESUSABLE packages. They are one of the building blocks of JS. 
 Practice this code in chrome dev tools.
 
-#### Declare function first:
+## Declare function first:
 
     function doSomething() {
         console.log("HELLO WORLD");
     }
 
-#### Then call it:
+### Then call it:
 
     doSomething();
     doSomething();
@@ -26,12 +26,12 @@ Practice this code in chrome dev tools.
         console.log("GOODBYE");
     }
 
-#### Call it:
+### Call it:
 
     sayHi();
 
 
-#### Example 2:
+## Example 2:
 
     console.log("Twinkle, twinkle, little star,");
     console.log("How I wonder what you are!");
@@ -47,7 +47,7 @@ Practice this code in chrome dev tools.
         console.log("Like a daimond in the sky.");
     }
 
-#### Call the verse as many times as you want to sing it. 
+### Call the verse as many times as you want to sing it. 
     (Sings song 4 times);
     singSong();
     singSong();
@@ -56,14 +56,14 @@ Practice this code in chrome dev tools.
 
 # ~~~~~~~~~~ ARGUMENTS  ~~~~~~~~~~~
 
-#### Often we want to write functions that take inputs. 
+Often we want to write functions that take inputs. 
 
 ## Example1:
     function square(num) {
         console.log(num * num);
     }
 
-#### Now when we need to call square we need to pass in a value. 
+### Now when we need to call square we need to pass in a value. 
 
     square(10); //prints 100
     square(3);  //prints 9
