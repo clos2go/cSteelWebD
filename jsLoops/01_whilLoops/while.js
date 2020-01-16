@@ -16,9 +16,9 @@ while (num <= 20) {
     num++
 }
 
-var num = 100;
+// var num = 100;
 
-while(num > 50) {
-    console.log(num + 1);
-    num--;
-}
+// while(num > 50) {
+//     console.log(num + 1);
+//     num--;
+// }
