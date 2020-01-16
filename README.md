@@ -54,7 +54,7 @@ Practice this code in chrome dev tools.
     singSong();
     singSong();
 
-# ~~~~~~~~~~~~~~ ARGUMENTS  ~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~ ARGUMENTS  ~~~~~~~~~~~
 
 #### Often we want to write functions that take inputs. 
 
@@ -70,3 +70,31 @@ Practice this code in chrome dev tools.
     square(4);  //prints 16
 
 ## Example2 
+
+    function sayHello(name) {
+        console.log("Hell
+    }
+
+### Call it
+    sayHello("Rusty");
+    sayHello("Carlos");
+    sayHello("Rachel");
+
+## Example3
+
+    function area(length, width) {
+        console.log(length * width);
+    }
+
+### Call it: 
+    area(9, 2);  //18
+
+
+## Example 4
+    function greet(person1, person2, person3) {
+        console.log("Hi, " + person1);
+        console.log("Hi, " + person2);
+        console.log("Hi, " + person3);
+    }
+### Call it:
+    greet("Michael", "Alex", "Freddy");
