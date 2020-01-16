@@ -15,7 +15,9 @@ if (age < 0) {
     console.log("happy 21st birthday!!!")
 } else if (age % Math.sqrt(age) === 0) {
     console.log("perfect square!")
+} else if (age % 2 !== 0) {
+    console.log("Your age is odddddd!!!")
 } else {
-    console.log("You may entet the venue and drink.")
+    console.log("You may enter the venue and drink.")
     alert("You may entet the venue and drink.")
 }
