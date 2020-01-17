@@ -15,9 +15,4 @@ var interval = setInterval(function() {
     }
     console.log("I am an anonymous function!");
     console.log("This is awesome!!");
-}, 2000);
-
-
-
-    
-    
+}, 2000)
