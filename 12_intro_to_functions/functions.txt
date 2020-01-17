@@ -1,15 +1,18 @@
+# cSteelWebD
+
+
 # ~~~~~~~~~~~ Functions ~~~~~~~~~~~~
 
 Functions let us wrap bits of code up into RESUSABLE packages. They are one of the building blocks of JS. 
 Practice this code in chrome dev tools.
 
-#### Declare function first:
+## Declare function first:
 
     function doSomething() {
         console.log("HELLO WORLD");
     }
 
-#### Then call it:
+### Then call it:
 
     doSomething();
     doSomething();
@@ -23,12 +26,12 @@ Practice this code in chrome dev tools.
         console.log("GOODBYE");
     }
 
-#### Call it:
+### Call it:
 
     sayHi();
 
 
-#### Example 2:
+## Example 2:
 
     console.log("Twinkle, twinkle, little star,");
     console.log("How I wonder what you are!");
@@ -44,26 +47,93 @@ Practice this code in chrome dev tools.
         console.log("Like a daimond in the sky.");
     }
 
-#### Call the verse as many times as you want to sing it. 
+### Call the verse as many times as you want to sing it. 
     (Sings song 4 times);
     singSong();
     singSong();
     singSong();
     singSong();
 
-# ~~~~~~~~~~~~~~ ARGUMENTS  ~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~ ARGUMENTS  ~~~~~~~~~~~
 
-#### Often we want to write functions that take inputs. 
+Often we want to write functions that take inputs. 
 
 ## Example1:
     function square(num) {
         console.log(num * num);
     }
 
-#### Now when we need to call square we need to pass in a value. 
+### Now when we need to call square we need to pass in a value. 
 
     square(10); //prints 100
     square(3);  //prints 9
     square(4);  //prints 16
 
 ## Example2 
+
+    function sayHello(name) {
+        console.log("Hell
+    }
+
+### Call it
+    sayHello("Rusty");
+    sayHello("Carlos");
+    sayHello("Rachel");
+
+## Example3
+
+    function area(length, width) {
+        console.log(length * width);
+    }
+
+### Call it: 
+    area(9, 2);  //18
+
+
+## Example 4
+    function greet(person1, person2, person3) {
+        console.log("Hi, " + person1);
+        console.log("Hi, " + person2);
+        console.log("Hi, " + person3);
+    }
+### Call it:
+    greet("Michael", "Alex", "Freddy");
+
+# ~~~~~~~ The Return Keyword  ~~~~~~~
+
+####This function capitalizes the first char in a string
+
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+    var city = "paris";             // "paris"
+    var capital = capitalize(city); // "Paris"
+
+####We can capture the returned value in a variable
+
+The *return* keyword stops execution of a function
+
+    function capitalize(str) {
+        if (typeOf str === "number") {
+            return "That's not a string"
+        }
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    var city = "paris";             // "paris"
+    var capital = capitalize(city); // "Paris"
+
+    var num = 37;
+    var capital = capitalize(num);   //"That's not a string"
+
+## Function Declaration vs. Function Expression
+
+    //function declaration
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    //function expression
+    var capitalize = function(str) {
+        return str.charAt(0).toUpperCase() + str.slicer(1);
+    }
