@@ -39,7 +39,19 @@ var movies = [{
 
 //Iterating with forEach
 
-movies.forEach(function(movie){
+// movies.forEach(function(movie){
+//     var result = "You have ";
+//     if (movie.hasWatched) {
+//         result += "watched ";
+//     } else {
+//         result += "not seen ";
+//     }
+//     result += "\"" +movie.title+ "\" - " +movie.rating+ " stars";
+//     console.log(result);
+// });
+
+//Iterating with forEach() and buildString() function
+function buildString(movie) {
     var result = "You have ";
     if (movie.hasWatched) {
         result += "watched ";
@@ -47,5 +59,10 @@ movies.forEach(function(movie){
         result += "not seen ";
     }
     result += "\"" +movie.title+ "\" - " +movie.rating+ " stars";
-    console.log(result);
+    return result;
+}
+
+movies.forEach(function(movie){
+    console.log(buildString(movie));
 });
+
