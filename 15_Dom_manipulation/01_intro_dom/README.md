@@ -60,3 +60,4 @@ setInterval(function() {
     isBlue = !isBlue;
 }, 1000);
 ```
+
