@@ -20,3 +20,35 @@ Everything is stored inside the document object | ![Image of DOM Chart](../01_in
 
 BEFORE![Image of What we see before](../01_intro_dom/images/before.png) | AFTER ![Image of what you see after JS changes](../01_intro_dom/images/after.png)
 ------------------------------------------------------------------- | ---------------------------------------------------------------------------------
+
+# Selecting
+## One way to select
+
+    var h1 = document.querySelector("h1");
+
+![Image of What is selected](../01_intro_dom/images/select1.png)
+
+# Manipulating
+## All sorts of things can be manipulated
+
+    var h1 = document.querySelector("h1");
+    h1.style.color = "pink";
+
+#### MANIPULATE using the < h1 > we selected
+
+![Image of h1 being turned pink with JS](../01_intro_dom/images/manipulate.png)
+
+## One more example
+### SELECT the < body >and change its color every second
+
+    var body = document.querySelector("body");  //SELECT
+    var isBlue = false;
+
+    setInterval(function() {
+        if(isBlue) {
+            body.style.background = "white";
+        } else {
+            body.style.background = "#3498db"
+        }
+        isBlue = !isBlue;
+    }, 1000);
