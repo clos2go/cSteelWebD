@@ -24,19 +24,19 @@ BEFORE![Image of What we see before](../01_intro_dom/images/before.png) | AFTER 
 # Selecting
 ## One way to select
 
-    ```javascript
-    var h1 = document.querySelector("h1");
-    ```
+```javascript
+var h1 = document.querySelector("h1");
+```
 
 ![Image of What is selected](../01_intro_dom/images/select1.png)
 
 # Manipulating
 ## All sorts of things can be manipulated
 
-    ```javascript
-    var h1 = document.querySelector("h1");
-    h1.style.color = "pink";
-    ```
+```javascript
+var h1 = document.querySelector("h1");
+h1.style.color = "pink";
+```
 
 #### MANIPULATE using the `<h1>` we selected
 
@@ -45,18 +45,18 @@ BEFORE![Image of What we see before](../01_intro_dom/images/before.png) | AFTER 
 ## One more example
 ### SELECT the `<body>` and change its color every second
 
-    ```javascript
-    var body = document.querySelector("body");  //SELECT
-    var isBlue = false;
-    ```
+```javascript
+var body = document.querySelector("body");  //SELECT
+var isBlue = false;
+```
 
-    ```javascript
-    setInterval(function() {
-        if(isBlue) {
-            body.style.background = "white";
-        } else {
-            body.style.background = "#3498db"
-        }
-        isBlue = !isBlue;
-    }, 1000);
-    ```
+```javascript
+setInterval(function() {
+    if(isBlue) {
+        body.style.background = "white";
+    } else {
+        body.style.background = "#3498db"
+    }
+    isBlue = !isBlue;
+}, 1000);
+```
