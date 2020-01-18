@@ -12,3 +12,11 @@ The browser turns every HTML tag into a Javascript object that we can manipulate
 -------------------------------------------------------------------------------- | -----------------------------------------------
 ![Image of What we see](../01_intro_dom/images/see.png) What you see | ![Image of Arrow](../01_intro_dom/images/arrow.png)
 Everything is stored inside the document object | ![Image of DOM Chart](../01_intro_dom/images/dom1.png)
+
+# The Process
+## SELECT an element and then MANIPULATE
+![Image of HTML](../01_intro_dom/images/html.png)
+### For our example, we'll change <h1> color using JS
+
+BEFORE![Image of What we see before(../01_intro_dom/images/see.png) | AFTER ![Image of what you see after JS changes](../01_intro_dom/images/arrow.png)
+------------------------------------------------------------------- | ---------------------------------------------------------------------------------
