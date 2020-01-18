@@ -16,7 +16,7 @@ Everything is stored inside the document object | ![Image of DOM Chart](../01_in
 # The Process
 ## SELECT an element and then MANIPULATE
 ![Image of HTML](../01_intro_dom/images/html.png)
-### For our example, we'll change <h1> color using JS
+### For our example, we'll change "<h1>" color using JS
 
-BEFORE![Image of What we see before(../01_intro_dom/images/see.png) | AFTER ![Image of what you see after JS changes](../01_intro_dom/images/arrow.png)
+BEFORE![Image of What we see before(../01_intro_dom/images/before.png) | AFTER ![Image of what you see after JS changes](../01_intro_dom/images/after.png)
 ------------------------------------------------------------------- | ---------------------------------------------------------------------------------
