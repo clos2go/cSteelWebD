@@ -3,7 +3,7 @@
 ### The style property is one way to manipulate an element's style
 
 ```javascript
-/SELECT
+//SELECT
 var tag = document.getElementById("highlight");
 
 //MANIPULATE
@@ -18,4 +18,5 @@ tag.style.marginTop = "200px";
 
 ### Separation of Concerns
 
-![Image of What is selected(sepCon.png)
+
+![Image of seperation of concerns](sepCon.png)
