@@ -31,3 +31,9 @@ var tag = document.querySelector("p");
 
 tag.innerHTML //"This is an <strong>awesome</strong> paragraph"
 ```
+
+```javascript
+document.querySelector("h1").textContent = "END OF THIS LESSON" //Changes h1 title to END IF THIS LESSON
+```
+
+### .textContent renders everything in it as text and .innerHTML renders everything as HTML 
