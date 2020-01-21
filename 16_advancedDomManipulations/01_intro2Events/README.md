@@ -3,10 +3,10 @@
 
 ## Events are everywhere
 
-    ** clicking on a button
-    ** Hovering over a link
-    ** Dragging and Dropping
-    ** Pressing the Enter key
+    * clicking on a button
+    * Hovering over a link
+    * Dragging and Dropping
+    * Pressing the Enter key
 
 # THE PROCESS
 ## We select an element and then add an event listener
