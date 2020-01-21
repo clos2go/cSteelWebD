@@ -16,3 +16,4 @@ link.setAttribute("href", "www.dogs.com"); /// <a href="www.dogs.com">I am a lin
 // CHANGE THE IMAGE SRC
 var img = document.querySelector("img");
 img.setAttribute("src", "corgi.png"); //<img src= "corgi.png">
+```
