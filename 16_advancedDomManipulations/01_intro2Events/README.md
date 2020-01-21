@@ -17,3 +17,28 @@
 
 # THE SYNTAX
 ### To add a listener, we use a method called *addEventListener()*;
+
+```javascript
+element.addEventListener(type, functionToCall);
+```
+
+```javscript
+var button = document.quesySelector("button");
+button.addEventListener("click", function() {
+    console.log("SOMEONE CLICKED THE BUTTON!!!");
+});
+```
+
+## An Example
+### We could also rewrite it using a named function
+
+```javascript
+var button = document.querySelector("button");
+var paragraph = document.querySelector("p");
+
+button.addEventListener("click", changeText);
+
+function changeText() {
+    paragraph.textContent = "Someone clicked the button!!";
+}
+```

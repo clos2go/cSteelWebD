@@ -26,7 +26,7 @@ tag.style.marginTop = "200px";
 
 ```javascript
     var tag = document.getElementById("highlight");
-    tag.style.colog = "blue"
+    tag.style.color = "blue"
     tag.style.border = "10px solid red";
 ```
 
