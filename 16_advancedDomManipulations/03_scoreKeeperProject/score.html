@@ -13,20 +13,24 @@
 </head>
 
 <body>
-    <h1>0 to 0</h1>
+    <h1 id="scoreBoard"><span id="p1Display">0</span> to <span id="p2Display">0</span> </h1>
     <div>
-        <p>Playing to: 7</p>
+        <p>Playing to: <span id="values"> 7 </span></p>
     </div>
     <div>
-        <input type="number" name="endGameScore" min="1" class="">
-        <button type="button" class="btn1">Player 1</button>
-        <button type="button" class="btn2">Player 2</button>
-        <button type="button" class="reset">Reset</button>
+        <input type="number" name="endGameScore" min="1" class="numInput" id="numInput"
+            placeholder="Enter winning score">
+        <button type="button" class="btn1" id="btnP1">Player 1</button>
+        <button type="button" class="btn2" id="btnP2">Player 2</button>
+        <button type="button" class="reset" id="reset">Reset</button>
+    </div>
+    <div>
+        <h3></h3>
     </div>
 
 
 
-    <script src="color.js"></script>
+    <script src="score.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
