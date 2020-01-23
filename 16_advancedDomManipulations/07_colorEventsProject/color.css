@@ -4,10 +4,12 @@ body {
 
 .square {
     width: 30%;
+    /* padding-top: 30%; */
     padding-bottom: 30%;
     background: purple;
     margin: 1.66%;
     float: left;
+    border-radius: 20%;
 }
 
 #container {
@@ -17,4 +19,26 @@ body {
 
 h1 {
     color: white;
+    /* background-color: rgb(44, 163, 214); */
+
+
+}
+
+.navbar {
+    color: rgb(44, 163, 214);
+    background-color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: 0 auto;
+    /* max-width: 600px; */
+}
+
+/* .navbar div {
+    margin: 0 auto;
+    max-width: 600px;
+} */
+
+.winner {
+    color: white;
+    background-color: pickedColor;
 }
