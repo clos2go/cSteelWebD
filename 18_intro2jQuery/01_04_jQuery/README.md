@@ -50,3 +50,21 @@ You Might Not Need JQuery [JQuery vs JavaScript](https://www.youmightnotneedjque
 <sript type="text/javascript" src"linkn"></sript>
 ```
 
+### open dev tools and type `jQuery` or a `$` and if you see `(e,t){return new k.fn.niit(e,t)}` you've connected jQuery correctly
+
+## Quick Preview
+### Here's a 30 second preview of what jQuery looks like:
+
+```jquery
+//when a user clicks a button with id 'trigger'
+$('#trigger').click(function() {
+    //change the body's background color to yellow
+    $('body').css("background", "yellow");
+
+    //fade our all img's over 3 seconds
+    $('img').fadeOut(3000, function() {
+        //remove imgs from page when fadeOut is done
+        $(this).remove();
+    });
+});
+```
