@@ -68,3 +68,68 @@ $('#trigger').click(function() {
     });
 });
 ```
+## Objectives
+
+* Select elements with $()
+* Use .css() to style elements
+
+## Selecting with jQuery
+### $("selectorGoesHere")
+
+#### Selecting with jQuery is very similar to querySelectorAll, in that we provide a CSS style selectoru and jQuery will return all matching elements. 
+
+### Example
+
+```jquery
+//to select all img tags
+$("img")
+
+//to select all elements with the class "sale"
+$(".sale")
+
+// to select element ith id "bonus"
+$("#bonus")
+
+//to select all a tags inside li's
+$("li a");
+```
+
+# Manipulating Style
+### .css(property, value)
+#### We select and then manipulate
+
+```jquery
+//select elem with id "special" and give it a border
+$("#special").css("border", "2px solid, red");
+
+//We can also pass in an object with styles
+    var styles = {
+        backgroundColor: "pink",
+        fontWeight: "bold"
+    };
+
+// We can also pass in multiple styles
+$("#special").css({
+    fontSize: "10px",
+    border: "3px dashed purple",
+    background:"rgba(89,45, 20, 0.5)"
+});
+
+    $("$special").css(styles);
+```
+
+# jQuery Exercise
+## Use the following starter HTML
+
+```html
+<div>Div 1</div>
+<div class="highlight">Div 2</div>
+<div id="third">Div 3</div>
+<div class="highlight">Div 4</div>
+```
+
+* Correctly include jQuery
+* Select all divs and give them a purple background
+* Select the divs with the *class* "highligh" and make them 200px wide
+* Select div with *id* "third" and give it a orange border.
+* Bonus: Select the first div only and chnage its font color to pink
