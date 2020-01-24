@@ -135,7 +135,7 @@ $("#special").css({
 * Bonus: Select the first div only and chnage its font color to pink
 
 
-#Common jQuery Methods
+# Common jQuery Methods
 * val()
 * text()
 * attr()
@@ -143,3 +143,6 @@ $("#special").css({
 * addClass()
 * removeClass()
 * toggleClass()
+
+thhis
+
