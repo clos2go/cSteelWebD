@@ -55,7 +55,7 @@ You Might Not Need JQuery [JQuery vs JavaScript](https://www.youmightnotneedjque
 ## Quick Preview
 ### Here's a 30 second preview of what jQuery looks like:
 
-```jquery
+```javascript
 //when a user clicks a button with id 'trigger'
 $('#trigger').click(function() {
     //change the body's background color to yellow
@@ -80,7 +80,7 @@ $('#trigger').click(function() {
 
 ### Example
 
-```jquery
+```javascript
 //to select all img tags
 $("img")
 
@@ -98,7 +98,7 @@ $("li a");
 ### .css(property, value)
 #### We select and then manipulate
 
-```jquery
+```javascript
 //select elem with id "special" and give it a border
 $("#special").css("border", "2px solid, red");
 
