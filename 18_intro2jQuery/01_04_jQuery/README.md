@@ -133,3 +133,13 @@ $("#special").css({
 * Select the divs with the *class* "highligh" and make them 200px wide
 * Select div with *id* "third" and give it a orange border.
 * Bonus: Select the first div only and chnage its font color to pink
+
+
+#Common jQuery Methods
+* val()
+* text()
+* attr()
+* html()
+* addClass()
+* removeClass()
+* toggleClass()
