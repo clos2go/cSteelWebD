@@ -196,3 +196,33 @@ $('li').removeClass("wrong");
 $('li').toggleClass("correct");
 //toggle only first li
 $('li').first().toggleClass("done");
+```
+# click() Event
+
+```javascript
+$('h1').click(function () {
+    alert("h1 clicked");
+})
+
+$('button').click(function () {
+    $(this).css("background", "pink");
+    alert("button clicked");
+});
+
+$('button').click(function () {
+    var text = $(this).text();
+    console.log(text);
+});
+```
+
+# keypress()
+
+### jQuery's keypress method is a quick and easy way to add a keypress listener to element(s).
+
+```javascript
+//listen for any keypress in any text input
+$('input[type = "text"]').keypress(function() {
+    alert("text input keypress");
+});
+```
+### samples from problems
