@@ -26,3 +26,9 @@
 ## Folder Structure
 
 :arrow_right_hook:
+
+toDoListProject Directory
+    :arrow_right_hook: assets directory
+        :arrow_right_hook: css direcrtory
+        :arrow_right_hook: js directory
+    :arrow_right_hook: index.html file
