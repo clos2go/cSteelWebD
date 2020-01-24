@@ -144,5 +144,55 @@ $("#special").css({
 * removeClass()
 * toggleClass()
 
-thhis
+## attr()
+### Can select and manipulate attributes in html
 
+```javascript
+// accesses img's src
+$('img').attr("src")
+// changes all img's src's
+$('img').attr("src", "https://scx1.b-cdn.net/csz/news/800/2019/whythepinema.jpg")
+//only changes the first image
+$('img:first-of-type').css("width", "200px")
+$('img:first-of-type').attr("src", "https://scx1.b-cdn.net/csz/news/800/2019/whythepinema.jpg")
+//shorthand
+$('img:first').css("width", "200px")
+//Next 2 change the input type to color or checkbox
+$('input').attr("type", "color");
+$('input').attr("type", "checkbox");
+// change the last image
+$('img').last().css("width", "200px")
+$('img').last().attr("src", "https://scx1.b-cdn.net/csz/news/800/2019/whythepinema.jpg")
+```
+## val()
+### Helps us extract current value of every matched element
+
+```javascript
+//Checks to see value of an input
+$("input").val();
+//Setter method
+$("input").val("Carlos Martinez");
+// delete/reset value of element with an empty string
+$('input').val("");
+//You can use val() on anything with input: inputs, checkboxes, dropdown menus, etc..
+$('select').val();
+```
+
+## .addClass() and removeClass() toggleClass()
+### adds/removes classes to elements
+
+```javascript 
+// adding 'correct' class turns h1 green
+$('h1').addClass("correct");
+
+//removing
+
+//add class to all
+$('li').addClass("wrong");
+//remove all
+$('li').removeClass("wrong");
+
+//toggle Class : every time you run this it will add or remove the class
+$('li').toggleClass("correct");
+//toggle only first li
+$('li').first().toggleClass("done");
