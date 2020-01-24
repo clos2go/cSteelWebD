@@ -1,9 +1,10 @@
+// gets document ready for jQuery
 $(document).ready(function () {
     //counts every key presses in input
-    // $('input').keypress(function () {
-    //     console.log("You presses a key");
-    // });
-    // logs keypress event
+    $('input').keypress(function () {
+        console.log("You presses a key");
+    });
+    //logs keypress event
     $('input').keypress(function (event) {
         console.log(event);
     });
@@ -13,4 +14,5 @@ $(document).ready(function () {
             alert("you pressed enter")
         }
     });
+    console.log(event);
 });
