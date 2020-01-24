@@ -20,7 +20,7 @@ $('button').click(finctino() {
 });
 ```
 
-# keypres()
+# keypress()
 ### monitors keypresses
 
 ```javascript
@@ -79,3 +79,52 @@ $("#dataTable tbody tr").on("click", function() {
 ```
 
 
+## Why use on()?
+#### In most cases, click() and on("click") will both get the job done. HOWEVER, there is one key difference:
+
+* click() only adds listeners for existing elements
+* on() will add listeners for all potential future elements
+* this will make sense later
+
+## jQuery Effects
+
+```javascript 
+
+$(document).ready(function () {
+    //fadeOut
+    $("#fade").click(function () {
+        $("div").fadeOut(1000, function () {
+            // $(this).remove();
+        });
+    });
+
+    //FadeIn
+    $("#fade").click(function () {
+        $("div").fadeIn(1000, function () {
+            // $(this).remove();
+        });
+    });
+
+
+    //Fade Toggle
+    $("#fade").click(function () {
+        $("div").fadeToggle(1000, function () {
+            // $(this).remove();
+        });
+    });
+
+    //Slide (SlideDown: elements must be hidden ((display: none)))
+    $("#slide").click(function () {
+        $("div").slideDown("slow", function () {
+            // console.log("slide");
+        });
+    })
+    //slideToggle
+    $("#sToggle").click(function () {
+        $("div").slideToggle("slow", function () {
+            // console.log("slide");
+        });
+    })
+});
+
+```
