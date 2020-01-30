@@ -22,10 +22,10 @@ www.udemy.com  // ----> 23.235.47.175
 
 ## Static vs Dynamic
 
-![generic Stack][genericStack.png]
+![generic Stack][22_backendBasics/01_backEndIntro/genericStack.png]
 
-![reddit Stack][redditStack.png]
+![reddit Stack][22_backendBasics/01_backEndIntro/redditStack.png]
 
 https://stackshare.io/
 
-![reddit Stack][]
+![reddit Stack][22_backendBasics/01_backEndIntro/ourStack.png]
