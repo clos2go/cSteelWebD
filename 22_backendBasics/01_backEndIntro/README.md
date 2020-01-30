@@ -26,8 +26,6 @@ www.udemy.com  // ----> 23.235.47.175
 
 ![reddit Stack][redditStack.png]
 
-stackshare
-
 https://stackshare.io/
 
-[stackshare.io][https://stackshare.io/]
+![reddit Stack][]
