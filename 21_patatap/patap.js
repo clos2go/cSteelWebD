@@ -7,11 +7,11 @@
 // });
 
 var sound1 = new Howl({
-	src: ['../../sounds/bubbles.mp3']
+	src: ['sounds/bubbles.mp3']
 });
 
 var sound2 = new Howl({
-	src: ['../../sounds/clay.mp3']
+	src: ['sounds/clay.mp3']
 });
 
 var circles = [];
