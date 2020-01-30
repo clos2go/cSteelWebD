@@ -6,16 +6,19 @@
 // 	fontSize: 15
 // });
 
-var sound = new Howl({
-	src: 'sounds/bubbles.mp3',
-	html5: true,
-	format: ['mp3', 'aac']
+var sound1 = new Howl({
+	src: ['../../sounds/bubbles.mp3']
+});
+
+var sound2 = new Howl({
+	src: ['../../sounds/clay.mp3']
 });
 
 var circles = [];
 
 function onKeyDown(event) {
-	sound.play();
+	//if key is a then play sound 1;
+	sound1.play();
 	var maxPoint = new Point(view.size.width, view.size.height);
 	var randomPoint = Point.random();
 	// A point between {x:0, y:0,} and {x:100, y:100}
