@@ -1,22 +1,28 @@
 var express = require("express");
 var app = express();
+var bodyParser = require("body-parser");
 var port = 3000;
 
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
+var friends = ["Tony", "Miranda", "Justin", "Pierre", "Lily"];
 
 app.get("/", function (req, res) {
     res.render("home");
 });
 
 app.post("/addfriend", function (req, res) {
-    res.send("YOU HAVE REACHED THE POST ROUTE!")
-    console.log('You have reached the post route!!')
+    var newFriend = req.body.newfriend;
+    friends.push(newFriend);
+    res.redirect("/friends")
 });
 
 app.get("/friends", function (req, res) {
-    var friends = ["Tony", "Miranda", "Justin", "Pierre", "Lily"];
     res.render("friends", {
         friends: friends
     });
