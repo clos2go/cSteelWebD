@@ -1,0 +1,24 @@
+<%- include ("partials/header") %>
+
+<h1></h1>
+
+
+<header class="jumbotron">
+    <div class="container">
+        <h1 class="display-6">Create a New Campground</h1>
+        <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
+    </div>
+</header>
+<div class="text-center">
+    <form action="/campgrounds" method="POST">
+        <div class="form-row justify-content-center">
+            <input class="form-control-lg mb-3" type="text" name="name" placeholder="Camp Name">
+        </div>
+        <div class="form-row justify-content-center">
+            <input class="form-control-lg mb-3" type="text" name="image" placeholder="Camp Image URL">
+        </div>
+        <button class="btn btn-md btn-dark">Submit</button>
+    </form>
+</div>
+
+<%- include ("partials/footer") %>
