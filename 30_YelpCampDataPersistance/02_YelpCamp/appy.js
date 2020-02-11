@@ -27,19 +27,19 @@ var campgroundSchema = new mongoose.Schema({
 
 var Campground = mongoose.model('Campground', campgroundSchema);
 
-// Campground.create({
-// 		name: 'Ruidoso',
-// 		image: 'https://pixabay.com/get/57e1d14a4e52ae14f6da8c7dda793f7f1636dfe2564c704c7d2f73d7924dc25c_340.jpg',
-// 		description: 'This campground is dope!!'
-// 	},
-// 	function (err, campground) {
-// 		if (err) {
-// 			console.log(err);
-// 		} else {
-// 			console.log(campground);
-// 		}
-// 	}
-// );
+Campground.create({
+		name: 'Ruidoso',
+		image: 'https://cdn.pixabay.com/photo/2020/02/04/10/42/camping-4817872_960_720.jpg',
+		description: 'This campground is dope!!'
+	},
+	function (err, campground) {
+		if (err) {
+			console.log(err);
+		} else {
+			console.log(campground);
+		}
+	}
+);
 
 app.get('/', function (req, res) {
 	res.render('landing');
@@ -61,9 +61,11 @@ app.get('/campgrounds', function (req, res) {
 app.post('/campgrounds', function (req, res) {
 	var name = req.body.name;
 	var image = req.body.image;
+	var desc = req.body.description;
 	var newCampground = {
 		name: name,
-		image: image
+		image: image,
+		description: desc
 	};
 	//Create a new campground and save to DB
 	Campground.create(newCampground, function (err, newlyCreated) {
@@ -83,8 +85,18 @@ app.get('/campgrounds/new', function (req, res) {
 //      SHOW - shows more info about one campground
 app.get("/campgrounds/:id", function (req, res) {
 	// find the campground with provided ID
-	//render show template with that campground 
-	res.render('show')
+	Campground.findById(req.params.id, function (err, foundCampground) {
+		// console.log(req.params.id)
+		if (err) {
+			console.log(err);
+		} else {
+			//render show template with that campground 
+			res.render('show', {
+				campground: foundCampground
+			});
+		}
+	});
+
 });
 
 app.listen(port, () => console.log(`Yelp app is listening on port ${3000}!`));
