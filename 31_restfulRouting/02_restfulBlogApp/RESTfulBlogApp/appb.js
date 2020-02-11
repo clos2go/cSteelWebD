@@ -71,18 +71,37 @@ app.get("/blogs/new", function(req, res) {
 
 //CREATE ROUTE
 app.post('/blogs', function(req, res) {
-    var title = req.body.title;
-    var image = req.body.image;
-    var body = req.body.body;
-    var newBlog = {
-        title: title,
-        image: image,
-        body: body 
-    }
-})
+    // var title = req.body.title;
+    // var image = req.body.image;
+    // var body = req.body.body;
+    // var newBlog = {
+    //     title: title,
+    //     image: image,
+    //     body: body 
+    //create blog
+    Blog.create(req.body.blog, function(err, newBlog) {
+        if(err) {
+            res.render("new");
+        } else {
+            //redirect to the index
+            res.redirect("/blogs")
+        }
 
+    });
+});
 
-
+// SHOW - shows more info about one blog
+app.get("/blogs/:id", function(req, res) {
+    Blog.findById(req.params.id, function(err, foundBlog) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('show', {
+                blog: foundBlog
+            });
+        }
+    });
+});
 
 
 
