@@ -1,0 +1,20 @@
+<%- include ("partials/header") %>
+
+
+<h1>All Da Blogs!!!</h1>
+<% blogs.forEach(function(blog) { %>
+<div>
+    <h2><%= blog.title %></h2>
+    <h6> <%= blog.created %> </h6>
+    <img src="<%= blog.image %>">
+    <p> <%= blog.body %> </p>
+
+</div>
+<% }); %>
+
+<%= blogs %>
+
+
+
+
+<%- include ("partials/footer") %>

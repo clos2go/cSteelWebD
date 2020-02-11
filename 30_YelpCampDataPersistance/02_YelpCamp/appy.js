@@ -99,7 +99,7 @@ app.get("/campgrounds/:id", function (req, res) {
 
 });
 
-app.listen(port, () => console.log(`Yelp app is listening on port ${3000}!`));
+app.listen(port, () => console.log(`Yelp app is listening on port ${port}!`));
 
 
 //           RESTFUL ROUTES
