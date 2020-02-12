@@ -1,9 +1,11 @@
-var bodyParser = require('body-parser'),
+var methodOverride = require('method-override'),
+    bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     express = require('express'),
     app = express(),
     port = 3000;
 
+//APP CONFIGURATION
 app.use(
     bodyParser.urlencoded({
         extended: true
@@ -11,12 +13,11 @@ app.use(
 );
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-
-//APP CONFIGURATION
 mongoose.connect('mongodb://localhost:27017/restful_blog_app', {
     useUnifiedTopology: true,
     useNewUrlParser: true
 });
+app.use(methodOverride("_method"));
 
 //MONGOOSE/MODEL CONFIG
 var blogSchema = new mongoose.Schema({
@@ -107,6 +108,27 @@ app.get("/blogs/:id", function (req, res) {
 });
 
 
+//EDIT ROUTE
+
+app.get("/blogs/:id/edit", function (req, res) {
+    Blog.findById(req.params.id, function (err, foundBlog) {
+        if (err) {
+            res.redirect("/blogs");
+        } else {
+            res.render("edit", {
+                blog: foundBlog
+            });
+        }
+    });
+
+});
+
+
+//UPDATE ROUTE
+
+app.put("/blogs/:id", function () {
+    res.send("Uopdaasdljfknasd;lfjhasd;fohs")
+});
 
 
 
