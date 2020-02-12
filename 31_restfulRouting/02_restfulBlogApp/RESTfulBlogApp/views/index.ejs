@@ -3,20 +3,41 @@
 <div class="ui main text container segment">
     <div class="ui huge header">All Da Blogs!!!!</div>
 </div>
+<div class="ui container segment">
 
-<% blogs.forEach(function(blog) { %>
-<div>
-    <h2><%= blog.title %></h2>
-    <h6> <%= blog.created %> </h6>
-    <img src="<%= blog.image %>">
-    <p> <%= blog.body %> </p>
+    <% blogs.forEach(function(blog) { %>
+    <div>
+        <!-- <h2><%= blog.title %></h2>
+        <h6> <%= blog.created %> </h6>
+        <img src="<%= blog.image %>">
+        <p> <%- blog.body.substring(0, 100) %>... </p> -->
+
+        <div class="ui items">
+            <div class="item container segment">
+                <div class="image">
+                    <img src="<%= blog.image %>" alt="">
+                </div>
+                <div class="content">
+                    <a href="" class="header"><%= blog.title %></a>
+                    <div class="meta">
+                        <span><%= blog.created %></span>
+                    </div>
+                    <div class="description">
+                        <p><%- blog.body.substring(0, 100) %>...</p>
+                    </div>
+                    <div class="extra">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="/blogs/<%= blog._id %>" class="ui violet basic button">Read More</a>
+
+    <% }); %>
 
 </div>
-<% }); %>
-
-<%= blogs %>
-
-
 
 
 <%- include ("partials/footer") %>

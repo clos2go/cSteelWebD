@@ -4,13 +4,13 @@ var bodyParser = require('body-parser'),
     app = express(),
     port = 3000;
 
-    app.use(
-        bodyParser.urlencoded({
-            extended: true
-        })
-    );
-    app.use(express.static('public'));
-    app.set('view engine', 'ejs');
+app.use(
+    bodyParser.urlencoded({
+        extended: true
+    })
+);
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
 
 //APP CONFIGURATION
 mongoose.connect('mongodb://localhost:27017/restful_blog_app', {
@@ -23,7 +23,10 @@ var blogSchema = new mongoose.Schema({
     title: String,
     image: String,
     body: String,
-    created: {type: Date, default: Date.now}
+    created: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 var Blog = mongoose.model('Blog', blogSchema);
@@ -51,7 +54,7 @@ app.get('/', function (req, res) {
 
 app.get('/blogs', function (req, res) {
     //GET ALL BLOGS FROM DB
-    Blog.find({}, function(err, blogs) {
+    Blog.find({}, function (err, blogs) {
         if (err) {
             console.log(err)
         } else {
@@ -64,13 +67,13 @@ app.get('/blogs', function (req, res) {
 
 
 //NEW ROUTE
-app.get("/blogs/new", function(req, res) {
+app.get("/blogs/new", function (req, res) {
     res.render("new");
 });
 
 
 //CREATE ROUTE
-app.post('/blogs', function(req, res) {
+app.post('/blogs', function (req, res) {
     // var title = req.body.title;
     // var image = req.body.image;
     // var body = req.body.body;
@@ -79,8 +82,8 @@ app.post('/blogs', function(req, res) {
     //     image: image,
     //     body: body 
     //create blog
-    Blog.create(req.body.blog, function(err, newBlog) {
-        if(err) {
+    Blog.create(req.body.blog, function (err, newBlog) {
+        if (err) {
             res.render("new");
         } else {
             //redirect to the index
@@ -91,10 +94,10 @@ app.post('/blogs', function(req, res) {
 });
 
 // SHOW - shows more info about one blog
-app.get("/blogs/:id", function(req, res) {
-    Blog.findById(req.params.id, function(err, foundBlog) {
+app.get("/blogs/:id", function (req, res) {
+    Blog.findById(req.params.id, function (err, foundBlog) {
         if (err) {
-            console.log(err);
+            res.redirect("/blogs");
         } else {
             res.render('show', {
                 blog: foundBlog
