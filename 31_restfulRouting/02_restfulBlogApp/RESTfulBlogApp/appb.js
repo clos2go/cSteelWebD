@@ -1,4 +1,5 @@
-var methodOverride = require('method-override'),
+var expressSanitizer = require('express-sanitizer');
+	methodOverride = require('method-override'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
 	express = require('express'),
@@ -11,6 +12,7 @@ app.use(
 		extended : true
 	})
 );
+app.use(expressSanitizer());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 mongoose.connect('mongodb://localhost:27017/restful_blog_app', {
@@ -82,6 +84,9 @@ app.post('/blogs', function(req, res) {
 	//     image: image,
 	//     body: body
 	//create blog
+
+	//SANITIZE
+	req.body.blog.body = req.sanitize(req.body.blog.body);
 	Blog.create(req.body.blog, function(err, newBlog) {
 		if (err) {
 			res.render('new');
@@ -131,7 +136,15 @@ app.put('/blogs/:id', function(req, res) {
 
 //DELETE ROUTE
 app.delete('/blogs/:id', function(req, res) {
-	res.send('YOU HAVA REEEEEACHEDD DEEEEELLLEEEEETEE!');
+	//destroy blog
+	Blog.findByIdAndRemove(req.params.id, function(err) {
+		if (err) {
+			res.redirect('/blogs');
+		} else {
+			res.redirect('/blogs');
+		}
+	});
+	//redirect somewhere
 });
 
 app.listen(port, () => console.log(`blog app is listening on port ${port}!`));
