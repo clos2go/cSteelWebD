@@ -1,5 +1,5 @@
 var expressSanitizer = require('express-sanitizer');
-	methodOverride = require('method-override'),
+methodOverride = require('method-override'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
 	express = require('express'),
@@ -9,27 +9,27 @@ var expressSanitizer = require('express-sanitizer');
 //APP CONFIGURATION
 app.use(
 	bodyParser.urlencoded({
-		extended : true
+		extended: true
 	})
 );
 app.use(expressSanitizer());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 mongoose.connect('mongodb://localhost:27017/restful_blog_app', {
-	useUnifiedTopology : true,
-	useNewUrlParser    : true,
-	useFindAndModify   : false
+	useUnifiedTopology: true,
+	useNewUrlParser: true,
+	useFindAndModify: false
 });
 app.use(methodOverride('_method'));
 
 //MONGOOSE/MODEL CONFIG
 var blogSchema = new mongoose.Schema({
-	title   : String,
-	image   : String,
-	body    : String,
-	created : {
-		type    : Date,
-		default : Date.now
+	title: String,
+	image: String,
+	body: String,
+	created: {
+		type: Date,
+		default: Date.now
 	}
 });
 
@@ -52,30 +52,30 @@ var Blog = mongoose.model('Blog', blogSchema);
 
 //RESTFUL ROUTES
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
 	res.redirect('/blogs');
 });
 
-app.get('/blogs', function(req, res) {
+app.get('/blogs', function (req, res) {
 	//GET ALL BLOGS FROM DB
-	Blog.find({}, function(err, blogs) {
+	Blog.find({}, function (err, blogs) {
 		if (err) {
 			console.log(err);
 		} else {
 			res.render('index', {
-				blogs : blogs
+				blogs: blogs
 			});
 		}
 	});
 });
 
 //NEW ROUTE
-app.get('/blogs/new', function(req, res) {
+app.get('/blogs/new', function (req, res) {
 	res.render('new');
 });
 
 //CREATE ROUTE
-app.post('/blogs', function(req, res) {
+app.post('/blogs', function (req, res) {
 	// var title = req.body.title;
 	// var image = req.body.image;
 	// var body = req.body.body;
@@ -87,7 +87,7 @@ app.post('/blogs', function(req, res) {
 
 	//SANITIZE
 	req.body.blog.body = req.sanitize(req.body.blog.body);
-	Blog.create(req.body.blog, function(err, newBlog) {
+	Blog.create(req.body.blog, function (err, newBlog) {
 		if (err) {
 			res.render('new');
 		} else {
@@ -98,34 +98,35 @@ app.post('/blogs', function(req, res) {
 });
 
 // SHOW - shows more info about one blog
-app.get('/blogs/:id', function(req, res) {
-	Blog.findById(req.params.id, function(err, foundBlog) {
+app.get('/blogs/:id', function (req, res) {
+	Blog.findById(req.params.id, function (err, foundBlog) {
 		if (err) {
 			res.redirect('/blogs');
 		} else {
 			res.render('show', {
-				blog : foundBlog
+				blog: foundBlog
 			});
 		}
 	});
 });
 
 //EDIT ROUTE
-app.get('/blogs/:id/edit', function(req, res) {
-	Blog.findById(req.params.id, function(err, foundBlog) {
+app.get('/blogs/:id/edit', function (req, res) {
+	Blog.findById(req.params.id, function (err, foundBlog) {
 		if (err) {
 			res.redirect('/blogs');
 		} else {
 			res.render('edit', {
-				blog : foundBlog
+				blog: foundBlog
 			});
 		}
 	});
 });
 
 //UPDATE ROUTE
-app.put('/blogs/:id', function(req, res) {
-	Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog) {
+app.put('/blogs/:id', function (req, res) {
+	req.body.blog.body = req.sanitize(req.body.blog.body);
+	Blog.findByIdAndUpdate(req.params.id, req.body.blog, function (err, updatedBlog) {
 		if (err) {
 			res.redirect('/blogs');
 		} else {
@@ -135,9 +136,9 @@ app.put('/blogs/:id', function(req, res) {
 });
 
 //DELETE ROUTE
-app.delete('/blogs/:id', function(req, res) {
+app.delete('/blogs/:id', function (req, res) {
 	//destroy blog
-	Blog.findByIdAndRemove(req.params.id, function(err) {
+	Blog.findByIdAndRemove(req.params.id, function (err) {
 		if (err) {
 			res.redirect('/blogs');
 		} else {
